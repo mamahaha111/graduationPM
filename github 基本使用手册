@@ -1,0 +1,42 @@
+github 基本使用手册
+
+前期的安装和rsa密钥配置略过
+
+新建文件夹
+右键 git bash
+git init
+
+fork项目到自己的GitHub上面
+git clone   ***my***.git
+git add .   //添加路径
+
+//建立连接地址为自己github项目的地址
+ git remote add origin https://github.com//aidaka/graduationPM.git 
+//如果提示 fatal: remote origin already exists.
+ git pull origin master --allow-unrelated-histories
+
+//把本地库的内容推送到远程，用git push命令，实际上是把当前分支master推送到远程。由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，
+ git push -u origin master
+ //如果报错显示如下
+Warning: Permanently added the RSA host key for IP address '13.229.188.59' to the list of known hosts.
+To github.com:/aidaka/graduationPM.git
+//则添加显示的ip到本机hosts文件末尾
+
+
+git commit -a -m "更新原因"
+git push 'fork出来的地址‘
+
+
+
+//我的实现方式
+git push  
+出来弹框输入密码，commit成功，当然是在之前追加了IP的基础
+
+
+//最后在GitHub向源仓库pull request提交成功
+//或者将公钥设置在源仓库里，还是删除自己的私钥或者源仓库进行某些权限设置好像也可以实现，未自己实现 
+
+参考文章
+https://blog.csdn.net/QD_smile/article/details/86529612?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522158410934219725211937770%2522%252C%2522scm%2522%253A%252220140713.130056874..%2522%257D&request_id=158410934219725211937770&biz_id=0&utm_source=distribute.pc_search_result.none-task
+
+https://blog.csdn.net/wowoniuzailushang/article/details/78545971?depth_1-utm_source=distribute.pc_relevant.none-task&utm_source=distribute.pc_relevant.none-task
